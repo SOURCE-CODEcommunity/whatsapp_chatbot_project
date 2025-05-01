@@ -14,6 +14,10 @@ WHATSAPP_API_URL = "https://graph.facebook.com/v21.0/524548570731447/messages"
 # Create your views here.
 
 @csrf_exempt
+def AI_model(request):
+    pass
+
+@csrf_exempt
 def whatsapp_webhook(request):
     #Handle Post request for message processing
     if request.method == "POST":
