@@ -15,7 +15,19 @@ WHATSAPP_API_URL = "https://graph.facebook.com/v21.0/524548570731447/messages"
 
 @csrf_exempt
 def AI_model(request):
-    pass
+    if request.method == 'POST':
+        response = HttpResponse()
+        response['Access-Control-Allow-Origin'] = '*'
+        
+        response['Access-Control-Allow-Headers'] = '*'
+        return response
+        
+    if request.method == 'OPTIONS':
+        response = HttpResponse()
+        response['Access-Control-Allow-Origin'] = '*'
+        response['Access-Control-Allow-Methods'] = 'POST, OPTIONS'
+        response['Access-Control-Allow-Headers'] = 'Content-Type'
+        return response
 
 @csrf_exempt
 def whatsapp_webhook(request):
